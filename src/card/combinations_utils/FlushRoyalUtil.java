@@ -6,7 +6,7 @@ import card.Suit;
 
 import java.util.*;
 
-public class FlushRoyalUtil implements IPokerCombCompareUtil {
+public class FlushRoyalUtil implements IPokerCombDefineUtil {
 
     @Override
     public boolean isMatch(List<Card> hand) {

@@ -4,7 +4,7 @@ import card.Card;
 
 import java.util.List;
 
-public interface IPokerCombCompareUtil {
+public interface IPokerCombDefineUtil {
     boolean isMatch(List<Card> hand);
     int getRank();
 }

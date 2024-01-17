@@ -5,7 +5,7 @@ import card.Rank;
 
 import java.util.*;
 
-public class TwoPairUtil implements IPokerCombCompareUtil {
+public class TwoPairUtil implements IPokerCombDefineUtil {
 
     @Override
     public boolean isMatch(List<Card> hand) {

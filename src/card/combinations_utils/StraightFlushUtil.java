@@ -6,7 +6,7 @@ import card.Suit;
 
 import java.util.*;
 
-public class StraightFlushUtil implements IPokerCombCompareUtil {
+public class StraightFlushUtil implements IPokerCombDefineUtil {
 
     @Override
     public boolean isMatch(List<Card> hand) {
