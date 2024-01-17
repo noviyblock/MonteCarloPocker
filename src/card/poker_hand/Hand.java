@@ -13,6 +13,20 @@ public class Hand {
         this.cards = new ArrayList<>();
     }
 
+    public Hand(List<Card> hand){
+        this.cards = hand;
+    }
+
+    public Hand(List<Card> cards1, List<Card> cards2) {
+        this.cards = mergeHands(cards1, cards2);
+    }
+
+    private List<Card> mergeHands(List<Card> hand1, List<Card> hand2) {
+        List<Card> mergedHand = new ArrayList<>(hand1);
+        mergedHand.addAll(hand2);
+        return mergedHand;
+    }
+
     public void addCard(Card card) {
         cards.add(card);
     }
