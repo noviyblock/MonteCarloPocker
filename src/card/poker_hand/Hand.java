@@ -1,6 +1,7 @@
 package card.poker_hand;
 
 import card.Card;
+import card.combinations_utils.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,7 +12,6 @@ public class Hand {
 
     public Hand() {
         this.cards = new ArrayList<>();
-        this.combinationRang = 1;
     }
 
     public void addCard(Card card) {
@@ -27,34 +27,70 @@ public class Hand {
     }
 
     //Определение типа комбинации в руке
-    public boolean isOnePair(List<Card> hand){
-        return true;
+    private int isOnePair(List<Card> hand){
+        OnePairUtil onePairUtil = new OnePairUtil();
+        if(onePairUtil.isMatch(hand)){
+            return onePairUtil.getRank();
+        }
+        return 1;
     }
-    public boolean isTwoPairs(List<Card> hand){
-        return true;
+    private int isTwoPairs(List<Card> hand){
+        TwoPairUtil twoPairUtil = new TwoPairUtil();
+        if(twoPairUtil.isMatch(hand)){
+            return twoPairUtil.getRank();
+        }
+        return 0;
     }
-    public boolean isSet(List<Card> hand){
-        return true;
+    private int isSet(List<Card> hand){
+        SetUtil setUtil = new SetUtil();
+        if (setUtil.isMatch(hand)){
+            return setUtil.getRank();
+        }
+        return 1;
     }
-    public boolean isStraight(List<Card> hand){
-        return true;
+    private int isStraight(List<Card> hand){
+        StraightUtil straightUtil = new StraightUtil();
+        if(straightUtil.isMatch(hand)){
+            return straightUtil.getRank();
+        }
+        return 1;
     }
-    public boolean isFlush(List<Card> hand){
-        return true;
+    private int isFlush(List<Card> hand){
+        FlushUtil flushUtil = new FlushUtil();
+        if(flushUtil.isMatch(hand)){
+            return flushUtil.getRank();
+        }
+        return 1;
     }
-    public boolean isFullHouse(List<Card> hand){
-        return true;
+    private int isFullHouse(List<Card> hand){
+        FullHouseUtil fullHouseUtil = new FullHouseUtil();
+        if(fullHouseUtil.isMatch(hand)){
+            return fullHouseUtil.getRank();
+        };
+        return 1;
     }
 
-    public boolean isFourCards(List<Card> hand){
-        return true;
+    private int isFourCards(List<Card> hand){
+        FourCardsUtil fourCardsUtil = new FourCardsUtil();
+        if(fourCardsUtil.isMatch(hand)){
+            return fourCardsUtil.getRank();
+        }
+        return 1;
     }
 
-    public boolean isStraightFlush(List<Card> hand){
-        return true;
+    private int isStraightFlush(List<Card> hand){
+        StraightUtil straightUtil = new StraightUtil();
+        if(straightUtil.isMatch(hand)){
+            return straightUtil.getRank();
+        }
+        return 1;
     }
 
-    public boolean isRoyalFlush(List<Card> hand){
-        return true;
+    private int isRoyalFlush(List<Card> hand){
+        FlushRoyalUtil flushRoyalUtil = new FlushRoyalUtil();
+        if(flushRoyalUtil.isMatch(hand)){
+            return flushRoyalUtil.getRank();
+        }
+        return 1;
     }
 }
